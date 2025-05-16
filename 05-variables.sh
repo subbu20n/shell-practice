@@ -2,6 +2,6 @@
 
 echo "Enter your pin number::"
 
-read PIN
+read -s SPIN
 
 echo "your number is: $1"
