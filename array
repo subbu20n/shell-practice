@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NUMBER1=108
+NUMBER2=400
+
+TIMESTAMP=$(DATE)
+
+echo "script execute at: $TIMESTAMP
+
