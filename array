@@ -5,5 +5,4 @@ NUMBER2=400
 
 TIMESTAMP=$(DATE)
 
-echo "script execute at: $TIMESTAMP
-
+echo "script execute at: $TIMESTAMP"
