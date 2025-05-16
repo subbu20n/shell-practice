@@ -7,3 +7,5 @@ echo "first movie: ${MOVIES[0]}"
 echo "subbu movie: ${MOVIES[3]}"
 
 echo "first movie: ${MOVIES[4]}"
+
+echo "first movie: ${MOVIES[%]}"
