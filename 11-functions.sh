@@ -10,7 +10,7 @@ else
    echo "you are running with root access"
 fi
 
-VALIDATE[]{
+VALIDATE(){
 if [ $1 -eq 0 ]
     echo "installing $2 is. SUCCESS"
  else
