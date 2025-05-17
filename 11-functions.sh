@@ -6,7 +6,7 @@ if [ $USERID -ne 0 ]
 then 
   echo "please run this script with root access"
 else
-   echo "you are running witth root access"
+   echo "you are running with root access"
   exit 1
 fi
 
