@@ -46,6 +46,6 @@ if [ $? -eq 0 ]
 then
    echo "nginx is not installed...going to install"
 else
-   echo "nginx is already installedd...nothing to do"
+   echo "nginx is already installed...nothing to do"
 fi
    
