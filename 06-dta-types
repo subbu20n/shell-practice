@@ -8,3 +8,5 @@ TIMESTAMP=$(date)
 echo "script executed at:: $TIMESTAMP"
 
 SUM=$(($NUMBER1+$NUMBER2))
+
+echo "sum os NUMBER1 AND NUMBER2 is: $SUM"
