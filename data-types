@@ -6,3 +6,7 @@ NUMBER2=600
 TIMESTAMP=$(date)
 
 echo "execute at :$TIMESTAMP"
+
+sum=$(($NUMBER1+$NUMBER2))
+
+echo "sum of $(NUMBERS) is: $SUM"
