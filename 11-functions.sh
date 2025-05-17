@@ -12,11 +12,11 @@ fi
 
 VALIDATE(){
 if [ $1 -eq 0 ]
-    echo "installing $2 is. SUCCESS"
+    echo "installing $2 is..SUCCESS"
  else
-    echo "installing $2 is ..Failure"
+    echo "installing $2 is..Failure"
     exit1
-    fi
+fi
 }
 
  dnf list installed mysql
