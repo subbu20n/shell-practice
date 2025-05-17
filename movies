@@ -1,5 +1,5 @@
 #!/bin/bash
 
-MOVIEA={"court" "subbu" "arun" "sai"} 
+MOVIES=("court" "subbu" "arun" "sai")
 
 echo "first movie: $MOVIES[0]
