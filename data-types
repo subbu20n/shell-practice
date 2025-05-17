@@ -1,12 +1,8 @@
 #!/bin/bash
 
-NUMBER1=SUBBU
-NUMBER2=200
+NUMBER1=300
+NUMBER2=600
 
 TIMESTAMP=$(date)
 
-echo "script executed at:$TIMESTAMP"
-
-SUM=$(($NUMBER1+$NUMBER2))
-
-echo "sum of subbu and number2 is: $SUM"
+echo "execute at :$TIMESTAMP"
