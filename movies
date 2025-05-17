@@ -3,3 +3,5 @@
 MOVIES=("SUBBU" "MANOJ" "MK" "RAMESH")
 
 echo "first movie: ${MOVIES[0]}"
+
+echo "first movie: ${MOVIES[6]}"
