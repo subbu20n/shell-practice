@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PERSON1=$1 
-PERSON2=$2
+PERSON1=SUPRIYA
+PERSON2=SUBBU
 
-echo "$PERSON1:hi $PERSON2, i love u, im getting fear to tell you"
-echo "$PERSON2:hlo $PERSON1, im waiting for this message till to you"
-echo "$PERSON1:ill text you this im going to offlinre to 2 days"
-echo "$PERSON2: why reyy i want to meet you directly when you free"
-echo "$PERSON1:no im always busy right now im npt able to meet you"
+echo "$PERSON2: hey arun come to room"
+echo "Arun:  hlo $PERSON2 i have work"
+echo "$PERSON2: why man come ntg will happen"
+echo "Arun: ill try,ok"
+echo "$PERSON2: ok ok!"
