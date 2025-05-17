@@ -4,14 +4,14 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then 
-  echo "please run this script with root access"
+  echo "error:: please run this script with root access"
+  exit1
 else
    echo "you are running with root access"
-  exit 1
 fi
 
 VALIDATE[]{
-if [ $? -eq 0 ]
+if [ $1 -eq 0 ]
     echo "installing $2 is. SUCCESS"
  else
     echo "installing $2 is ..Failure"
