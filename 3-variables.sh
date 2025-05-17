@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PERSON1=SUBBU
+PERSON1=MODI 
 PERSON2=SUPRIYA
 
 echo "$PERSON1:hi $PERSON2, i love u, im getting fear to tell you"
