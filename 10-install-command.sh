@@ -10,4 +10,3 @@ else
 fi
 
 dnf install mysql -y
-         
