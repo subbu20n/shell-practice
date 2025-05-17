@@ -1,10 +1,15 @@
 #!/bin/bash
 
-if (number < 10) {
-    print number is less than 10
-}
+NUMBER=$1
+# -lt less tthan
+# -gt greater than
+# -eq equal
+# -nq not equal
 
-else {
-    print number is not less than 10
+if [ $NUMBER -lt 10 ]
+then 
+  echo "Given number  $NUMBER is less than 10"
 
-}
+else
+   echo "Given number $NUMBER is not less than 10"
+fi
