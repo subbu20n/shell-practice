@@ -2,12 +2,12 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 10 ]
+if [ $USERID -ne 0 ]
 then
-   echo "given number $NUMBER is less than 10" 
+   echo "ERROR:: please run this script with root access" 
    exit 1 #give other number 0 upto 127
 else 
-   echo "give number $NUMBER is not less than 10"
+   echo "you are running with root access"
 fi
 
 # validate function takes input as exit status when they are tried to install it
