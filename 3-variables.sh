@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PERSON1=MODI 
-PERSON2=SUPRIYA
+PERSON1=$1 
+PERSON2=$2
 
 echo "$PERSON1:hi $PERSON2, i love u, im getting fear to tell you"
 echo "$PERSON2:hlo $PERSON1, im waiting for this message till to you"
