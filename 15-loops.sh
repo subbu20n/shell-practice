@@ -36,7 +36,7 @@ fi
 
 for package in ${PACKAGES[@]}
 
-dnf list installed $package &>>LOG_FILE
+dnf list installed $PACKAGE &>>LOG_FILE
 if [ $? -ne 0 ]
 then 
    echo  "$package is not installed ... going to install it" | tee -a $LOG_FILE
