@@ -19,7 +19,7 @@ then
    echo -e " $R ERROR:: please run this script with root access $N" &>>$LOG_FILE
    exit 1
 else
-   echo "you are running with root access"
+   echo "you are running with root access" &>>$LOG_FILE
 fi
 
 VALIDATE(){
