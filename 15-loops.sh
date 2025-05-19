@@ -33,7 +33,6 @@ else
     exit 1
 fi         
 }
-
 for package in ${PACKAGES[@]}
 
 dnf list installed $PACKAGE &>>LOG_FILE
