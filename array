@@ -7,3 +7,5 @@ echo "First movie: ${MOVIES[0]}"
 echo "First movie: ${MOVIES[5]}"
 
 echo "all movie: ${MOVIES[@]}"
+
+echo "First movie: ${MOVIES[3]}"
