@@ -29,7 +29,7 @@ VALIDATE(){
     then
         echo -e "installing $2 is...$G SUCCESS $N" | tee -a $LOG_FILE
     else
-        echo -e "instalng $2 is...$R FAILURE $N"|tee -a $LOG_FILE
+        echo -e "installing $2 is... $R FAILURE $N"| tee -a $LOG_FILE
     fi        
 }
 
