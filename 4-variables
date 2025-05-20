@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUMBER1=100
+NUMBER1=subbu
 NUMBER2=200
 
 TIMESTAMP=$(date)
@@ -9,4 +9,4 @@ echo " please run this scrip at :$TIMESTAMP"
 
 SUM=$(($NUMBER1+$NUMBER2))
 
-echo "sum of NUMBER1 and NUMBER2 is: $SUM"
+echo "sum of subbu and NUMBER2 is: $SUM"
