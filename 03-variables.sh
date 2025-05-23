@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SUBBU=PERSON1
-SUPRIYA=PERSON2
+PERSON1=sriram
+PERSON2=SEETA
 
 echo "$PERSON1:: hi $PERSON2, how are you"
 echo "$PERSON2:: hlo $PERSON1 ,im fine too and you"
