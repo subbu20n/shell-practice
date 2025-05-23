@@ -2,4 +2,5 @@
 
 echo -e "\e[31m Hello colors"
 echo -e "Hello no colors"
+echo -e "\e[33m subbu \e[0m supriya"
 
