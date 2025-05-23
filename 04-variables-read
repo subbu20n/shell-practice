@@ -10,4 +10,4 @@ echo "please give me my account number"
 
 read account 
 
-echo "show your number: $account"
+echo "enter number: $account"
