@@ -12,4 +12,7 @@
 
 subbu=("i love supriya" "sindu i want subbu" " sooraj i want siva")
 
+
 echo " subbu: ${subbu[1]}"
+echo " subbu: ${subbu[2]}"
+
