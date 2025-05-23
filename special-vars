@@ -9,5 +9,5 @@ echo "which user running the script: $USER"
 echo "pid of the current script: $$"
  sleep 10 &
 echo "pid oflast command running the script: $!"
-exit status of last command :$?"
+echo "exit status of the last command: $?"
 
