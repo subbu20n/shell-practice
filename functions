@@ -11,7 +11,7 @@ else
 fi
 
 # validate function takes input as exit status what command they tried to install
-VALIDATE(){
+VALIDATE() {
     if [ $1 -eq 0 ]
     then 
        echo "Installing $2 is ... SUCCESS"
