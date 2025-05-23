@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "please enter you pin"
+
+read PIN
+
+echo "enter your pin: $PIN"
