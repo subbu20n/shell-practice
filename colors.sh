@@ -63,8 +63,3 @@ then
 else 
    echo -e "nothing to do python3 ... $Y already installed $N" &>>$LOG_FILE
 fi
-
-
-
-
-
