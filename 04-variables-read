@@ -8,6 +8,6 @@
 
 echo "please give me my account number"
 
-read account 
+read  -s acoount
 
 echo "enter number: $account"
