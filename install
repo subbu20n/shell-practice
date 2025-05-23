@@ -8,7 +8,7 @@ then
 else 
    echo "run this script with root access"
 fi
-dnf install mysql-y
+dnf install mysql -y
 
 
 if [ $? -eq 0 ]
