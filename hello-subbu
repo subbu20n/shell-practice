@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Subbu:: hi arun ,how r u"
+echo "Arun:: hlo subbu ,i am fine"
+echo "Subbu:: Hlo iam fine too"
+echo "Arun:: ok good"
+eho "Subbu:: ok thank you" 
