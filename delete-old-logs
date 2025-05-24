@@ -6,7 +6,7 @@ while IFS= read -r filepath
 do 
   echo $filepath
 
-done <<<<<<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
 
 USERID=$(id -u)
 R="\e[31m"
@@ -46,7 +46,7 @@ while IFS= read -r filepath
 do 
   echo "Deleting file : $filepath" | tee -a $LOG_FILE
   rm -rf $filepath
-done <<<<<<< $FILES_TO_DELETE
+done <<< $FILES_TO_DELETE
 
 echo "script execution successfully"
 
