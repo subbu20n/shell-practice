@@ -6,4 +6,4 @@ echo "$wishes"
 
 echo "pid of script-3: $$"
 
-./script-4
+source ./script-4
