@@ -17,13 +17,11 @@ then
     exit 1
 else 
     echo "run this script with root access" &>>$LOG_FILE
-    exit 1
 fi        
 VALIDATE(){
     if [ $1 -eq 0 ]
 then
     echo -e "Installing $2 is ..  $G success $N" &>>$LOG_FILE
-    exit 1
 else 
     echo  -e "installing $2 is .. $R failure  $N" &>>$LOG_FILE
     exit 1
