@@ -36,7 +36,8 @@ VALIDATE(){
     then 
         echo -e "Installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
     else 
-        echo -e "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE    
+        echo -e "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE  
+    fi      
 }
 
 echo "script started execution successfully at: $(date)"  | tee -a $LOG_FILE
