@@ -7,3 +7,4 @@ then
 else 
     echo "run this script with root access"
 fi        
+dnf install mysql
