@@ -10,7 +10,7 @@ SCRIPT_NAME=$(echo  $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script started at: $(date) &>>$LOG_FILE
+echo "script started at: $(date)" &>>$LOG_FILE
 if [ $USERID -ne 0 ]
 then
     echo -e "$R ERROR :: please run this script with root access $N" &>>$LOG_FILE
