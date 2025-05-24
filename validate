@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "hlo subbu"
 echooooo "hlo no subbu bmm"
 echo "hlo rayudu"
