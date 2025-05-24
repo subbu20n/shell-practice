@@ -40,4 +40,4 @@ do
   rm -rf $filepath
 done <<< $FILES_TO_DELETE  
 
-echo "script execution completed successfully" 
+echo "script execution completed successfully
