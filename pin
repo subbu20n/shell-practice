@@ -1,6 +1,8 @@
 #!/bin/bash
 
-echo "please enter your pin"
- read -s PIN
+NUMBER1=100
+NUMBER2=200
 
- echo "enter your number: "
+TIMESTAMP=$(date)
+
+echo "script executed at : $TIMESTAMP"
