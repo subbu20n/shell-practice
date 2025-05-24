@@ -2,4 +2,4 @@
 
 echo "pid of the script-2: $$"
 
-echo "$GREETING"
+echo "$wishes"
