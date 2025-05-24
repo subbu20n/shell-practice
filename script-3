@@ -1,9 +1,9 @@
 #!/bin/bash
 
-WISHES="i love u subbu"
+wishes="i love u suppi"
 
-echo "$WISHES"
+echo "$wishes"
 
-echo "Pid of script-3: $$"
+echo "pid of script-3: $$"
 
-source ./script-4
+./script-4
