@@ -1,9 +1,9 @@
 #!/bin/bash
 
-wishes="happy, married life"
+lovers="hlo subbu i love u"
 
-echo "$wishes"
+echo "$lovers"
 
-echo "pid of script-1: $$"
+echo "pid 0f script-1: $$"
 
 source ./script-2
