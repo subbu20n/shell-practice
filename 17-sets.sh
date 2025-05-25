@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 echo "Hello,GOOD MORNING"
 
 echooooooo "Hi good morning"
