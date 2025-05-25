@@ -45,3 +45,43 @@ DAYS=${3:-14}
         usage
     fi
 
+if [ ! -d $SOURCE_DIR ]
+then
+   echo -e "$R source directory $SOURCE_DIR does not exist please check $N"
+   exit 1
+fi
+
+if [ ! -d $DEST_DIR ]
+then
+   echo -e "$R destination directory $DEST_DIR does not exist please check $N"
+   exit 1
+fi
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+if [ ! -z "$FILES" ]
+then
+   echo "FILES to zip are: $FILES"
+   TIMESTAMP=$(date +%F +%H +%M +%s)
+   ZIP_FILE="$DEST_DIT/app-logs -TIMESTAMP.ZIP"
+   find $SOURCE_DIR -name "*.log" -mtime +14 | ZIP -@ "$ZIP_FILE"
+if [ -f $ZIP_FILE ]
+then 
+echo "successfully created zip file"
+while IFS= read -r filepath
+do 
+  echo "deleting file : $filepath" | tee -a $LOG_FILE
+
+  rm -rf $filepath
+done <<< $FILES
+
+   echo -e "log files older than found $days from source directory removed ... $G success $N"
+else
+    echo -e "zip file creation ... $R FAILURE $N"
+fi
+
+else 
+   echo -e "no log files found older than 14 days ... $Y SKIPPING $N"
+fi 
+   
+
+   
