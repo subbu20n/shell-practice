@@ -1,9 +1,0 @@
-#!/bin/bash
-
-wishes="i love u suppi"
-
-echo "$wishes"
-
-echo "pid of script-3: $$"
-
-source ./script-4

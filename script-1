@@ -1,9 +1,0 @@
-#!/bin/bash
-
-lovers="hlo subbu i love u"
-
-echo "$lovers"
-
-echo "pid 0f script-1: $$"
-
-source ./script-2

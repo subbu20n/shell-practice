@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "Pid of the script-4: $$"
-echo "$wishes"

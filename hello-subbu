@@ -1,8 +1,0 @@
-#!/bin/bash
-PERSON1=$1
-PERSON2=$2
-echo "$PERSON1:: hi $PERSON2 ,how r u"
-echo "$PERSON2:: hlo $PERSON1 ,i am fine"
-echo "$PERSON1:: Hlo iam fine too"
-echo "$PERSON2:: ok good"
-echo "$PERSON1:: ok thank you" 

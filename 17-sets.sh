@@ -1,8 +1,5 @@
 #!/bin/bash
-set -e
- 
- echo "hello good morning"
+echo "Hello,GOOD MORNING"
 
- echooooo "hello  this will be error"
-
- echo "hello morning"
+echooooooo "Hi good morning"
+echoo "good morning"
