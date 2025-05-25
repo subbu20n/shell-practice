@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e
+echo "hello morning"
 
-echo "Hello,GOOD MORNING"
+echooooo "good morning"
 
-echooooooo "Hi good morning"
-echo "good morning"
+echo "subbu"
+
