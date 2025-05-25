@@ -2,4 +2,4 @@
 echo "Hello,GOOD MORNING"
 
 echooooooo "Hi good morning"
-echoo "good morning"
+echo "good morning"
