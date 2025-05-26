@@ -46,7 +46,7 @@ then
     usage
 fi
 
-if [ ! -d $SORCE_DIR ]
+if [ ! -d $SOURCE_DIR ]
 then 
    echo -e "$R source directory $SOURCE_DIR does not exist please check $N"
    exit 1
