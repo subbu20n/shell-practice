@@ -79,5 +79,5 @@ DAYS=$(3:-14)
      fi 
      else 
         echo -e "no log files found older than $days ... $Y Skipping $N"
-     f                   
+     fi                   
 
