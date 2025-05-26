@@ -1,5 +1,5 @@
 #!/bin/bash
-WISHES="Hello, good morning"
+subbu="Hello, good morning"
 
 echo "$WISHES"
 
