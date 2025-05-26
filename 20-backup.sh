@@ -2,7 +2,7 @@
 USERID=$(id -u)
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14)
+DAYS=$(3:-14) # if DAYS are provided that will be considered, otherwise default 14 days
 
 R="\e[31m"
 G="\e[32m"
@@ -11,8 +11,8 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME
-SOURCE_DIR="/home/ec2-user/app-logs"
+LOG_FILE=$LOGS_FOLDER/backup.log
+
 
 mkdir -p $LOGS_FOLDER
 echo "Script started execution at : $(date)" | tee -a $LOG_FILE
