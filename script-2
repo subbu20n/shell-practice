@@ -2,4 +2,4 @@
 
 echo "Pid of the script-2: $$"
 
-echo "$GREETING"
+echo "$hlo subbu"
