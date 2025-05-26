@@ -72,10 +72,10 @@ then
 
  #    if [ -f "$ZIP_FILE" ]
 #     then
-#         echo "successfully crating a zip file"
+#         echo "successfully created  zip file"
 #     while IFS= read -r filepath
 #     do
-#       echo "Deleting file : $filepath"
+#       echo "Deleting file: $filepath"
 #       rm -rf $filepath
 #     done <<< $FILES 
 # else 
