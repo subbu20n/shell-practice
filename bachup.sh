@@ -81,3 +81,7 @@ DAYS=$(3:-14)
         echo -e "no log files found older than $days ... $Y Skipping $N"
      fi                   
 
+END_TIME=$(date +%s)
+TOTAL_TIME=$(( $END_TIME - $START_TIME ))
+
+echo -e "Script execution completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE 
