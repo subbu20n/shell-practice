@@ -5,5 +5,5 @@ echo "$GREETING"
 
 echo "PID of script-1: $$"
 
-./script-2
+source ./script-2
 
