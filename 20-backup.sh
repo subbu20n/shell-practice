@@ -85,6 +85,6 @@ else
 fi     
         
 else
-    echo -e "no log file found older than $days ... $Y SKIPPING $N
+    echo -e "no log file found older than $days ... $Y SKIPPING $N"
 fi     
 
