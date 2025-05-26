@@ -12,6 +12,7 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME
+SOURCE_DIR="/home/ec2-user/app-logs"
 
 mkdir -p $LOGS_FOLDER
 echo "Script started execution at : $(date)" | tee -a $LOG_FILE
@@ -62,7 +63,23 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ ! -z "$FILES" ]
 then 
-    echo "files to zip are: $FILES"
+    echo "files to zip are: $FILES" 
+
+#     TIMESTAMP=$(date +%F +%M +%H +%s)
+#     ZIP_FILE=$DEST_DIR/app-logs -$TIMESTAMP.ZIP
+
+#     if [ -f "$ZIP_FILE" ]
+#     then
+#         echo "successfully crating a zip file"
+#     while IFS= read -r filepath
+#     do
+#       echo "Deleting file : $filepath"
+#       rm -rf $filepath
+#     done <<< $FILES 
+# else 
+#     echo -e "
+        
 else
     echo -e "no log file found older than $days ... $Y SKIPPING $N"    
 fi     
+
