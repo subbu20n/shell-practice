@@ -3,7 +3,7 @@ WISHES="Hello, good morning"
 
 echo "$wishes"
 
-echo "PID of script-1: $$"
+echo "PID of script-1: $$
 
 source ./script-2
 
