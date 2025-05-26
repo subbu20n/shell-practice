@@ -11,12 +11,12 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE=$LOGS_FOLDER/backup.log
+LOG_FILE="$LOGS_FOLDER/backup.log"
 
 
 mkdir -p $LOGS_FOLDER
 echo "Script started execution at : $(date)" | tee -a $LOG_FILE
-
+check_root(){
 if [ $USERID -ne 0 ]
 then 
    echo -e "$R ERROR:: please run this script with root access $N" | tee -a $LOG_FILE
@@ -24,6 +24,7 @@ then
 else
    echo "you are running with root access" | tee -a $LOG_FILE
 fi 
+}
 
 #validate function takes input as exit status what command they tried to install
 
@@ -63,7 +64,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if [ ! -z "$FILES" ]
 then 
-    echo "files found" 
+    echo "files to zip are: $FILES" 
 
 #     TIMESTAMP=$(date +%F +%M +%H +%s)
 #     ZIP_FILE=$DEST_DIR/app-logs -$TIMESTAMP.ZIP
