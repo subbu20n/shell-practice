@@ -1,7 +1,7 @@
 #!/bin/bash
-GREETING="Hello, good morning"
+WISHES="Hello, good morning"
 
-echo "$GREETING"
+echo "$wishes"
 
 echo "PID of script-1: $$"
 
