@@ -12,6 +12,8 @@ do
 
   if [ $USAGE -ge $DISK_THRESHOLD ]
   then  
-      MSG="Hard Disk Usage on $PARTITION: $USAGE"
+      MSG+="Hard Disk Usage on $PARTITION: $USAGE \n"
   fi    
 done <<< $DISK_USAGE       
+
+echo $MSG
