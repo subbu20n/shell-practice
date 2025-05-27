@@ -17,4 +17,4 @@ do
 
     #echo -e $MSG
 
-    sh mail.sh "Devops Team" "Alert_type" "$IP" "$MSG" "subbunandyala68@gmail.com" "Alert-Hard Disk Usage"
+    sh mail.sh "DevOps Team" "High Disk Usage" "$IP" "$MSG" "subbunandyala68@gmail.com" "ALERT-High Disk Usage"
