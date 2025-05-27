@@ -11,7 +11,7 @@ do
 
   if [ $USAGE -gt $DISK_THRESHOLD ]
   then
-     MSG="HIgh disk usage on $PARTITION: $USAGE"
+     MSG+="HIgh disk usage on $PARTITION: $USAGE"
   fi   
   done <<< $DISK_USAGE
 
