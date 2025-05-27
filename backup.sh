@@ -71,7 +71,7 @@ do
 done <<< $FILES
 else 
     echo -e "log files found older than $days from source directory removed ... $G SUCCESS $N" 
-fi
+
 
 else 
     echo -e "zip file creation ... $R FAILURE $N"
