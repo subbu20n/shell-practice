@@ -83,5 +83,5 @@ then
 fi 
 
 else 
-    echo -e "no log files found from $days ... $Y SKIPPING $N
+    echo -e "no log files found from $days ... $Y SKIPPING $N"
 fi
