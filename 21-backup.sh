@@ -56,9 +56,10 @@ fi
 if [ ! -d $DEST_DIR ]
 then 
     echo -e "$R destination directory $DEST_DIR does not exist please check $N"
+    exit 1
 fi 
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 if [ ! -z "$FILES" ]
 then
    echo "zip files are: $FILES"
