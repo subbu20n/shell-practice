@@ -15,4 +15,6 @@ do
   fi   
   done <<< $DISK_USAGE
 
-    echo -e $MSG
+    #echo -e $MSG
+
+    sh mail.sh "Devops Team" "Alert_type" "$IP" "$MSG" "subbunandyala68@gmail.com" "Alert-Hard Disk Usage"
