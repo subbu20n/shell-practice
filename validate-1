@@ -1,7 +1,8 @@
 #!/bin/bash
+set -e
 
-echo "hello world"
+echo "hello subbu"
 
-echoooooo "hello are you ok"
+echooo "hello ram subbu"
 
-echo "hello ram"
+echo "hello subbu"
