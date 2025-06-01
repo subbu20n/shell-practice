@@ -59,7 +59,7 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime $days)
 if [ ! -z "$FILES" ]
 then 
-    echo "files foundout"
+    echo "files to zip are: $FILES"
     # TIMESTAMP=$(date+%F+%H+%M+%S)
     # ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip
     # find $SOURCE_DIR -name "*.log" -mtime $days | zip -@ "$ZIP_FILE"
