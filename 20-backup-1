@@ -61,4 +61,5 @@ if [ ! -z "$FILES" ]
 then 
     echo "files found"
 else
-    echo "no log files found older than $days ... $Y SKIPPING $N" | tee -a $LOG_FILE     
+    echo "no log files found older than $days ... $Y SKIPPING $N" | tee -a $LOG_FILE 
+fi         
