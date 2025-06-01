@@ -9,7 +9,7 @@ else
    echo "you are runnig with root access"
 fi
 
-dnf install mysql
+dnf install mysqlfghj
 
 if [ $? -eq 0 ]
 then
