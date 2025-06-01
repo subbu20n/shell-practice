@@ -7,7 +7,7 @@ DAYS=${3:-14} # if DAYS are provided that will be considered, otherwise default 
 
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+LOG_FILE="$LOGS_FOLDER/backup.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -70,7 +70,7 @@ then
 
     if [ -f $ZIP_FILE ]
     then
-        echo -e "Successfully created Zip file"
+        echo -e "Successfully created zip file"
 
         while IFS= read -r filepath
         do
@@ -79,7 +79,7 @@ then
         done <<< $FILES
         echo -e "Log files older than $DAYS from source directory removed ... $G SUCCESS $N"
     else
-        echo -e "Zip file creation ... $R FAILURE $N"
+        echo -e "zip file creation ... $R FAILURE $N"
         exit 1
     fi
 else
