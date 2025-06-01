@@ -1,5 +1,6 @@
 #!/bin/bash
 
-echo "Pid of the script-2: $$"
+echo "pid of the script-2: $$"
 
-echo "$hlo subbu"
+echo "$GREETING"
+
