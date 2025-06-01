@@ -43,3 +43,14 @@ then
     usage
 fi
 
+if [ ! -d $SOURCE_DIR ]
+then
+    echo -e "$R source directory $SOURCE_DIR does not exist please check $N"
+    exit 1
+fi
+
+if [ $# -lt 0 ]
+then
+    echo -e  "$R destination directory $DEST_DIR does not exist please check $N"
+    exit 1
+fi     
