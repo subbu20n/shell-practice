@@ -54,4 +54,11 @@ if [ $# -lt 0 ]
 then
     echo -e  "$R destination directory $DEST_DIR does not exist please check $N"
     exit 1
-fi     
+fi 
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime $days)
+if [ ! -z "$FILES" ]
+then 
+    echo "files found"
+else
+    echo "no log files found older than $days ... $Y SKIPPING $N" | tee -a $LOG_FILE     
