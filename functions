@@ -1,9 +1,13 @@
 #!/bin/bash
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 if [ $USERID -ne 0 ]
 then 
-   echo "ERROR:: please run the script with root access"
+   echo -e "$R ERROR:: please run the script with root access $N"
    exit 1
 else
    echo "you are running root acces"
@@ -13,9 +17,9 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo "Installing $2 is ... SUCCESS"
+        echo "Installing $2 is ... $G SUCCESS $N"
     else
-        echo "Installing $2 is ... FAILURE"
+        echo "Installing $2 is ... $R FAILURE $N"
         exit 1
     fi         
 }
@@ -27,7 +31,7 @@ then
    dnf install mysql -y
    VALIDATE $? "MYSQL"
 else
-    echo "mysql is already installed ... nothing to do"
+    echo "mysql is already installed ... $Y nothing to do $N"
 fi 
 
 dnf list installed nginx
@@ -37,7 +41,7 @@ then
    dnf install nginx -y
    VALIDATE $? "NGINX"
 else
-    echo "nginx is already installed ... nothing to do"
+    echo "nginx is already installed ... $Y nothing to do $N"
 fi 
 
 dnf list installed python3
@@ -47,5 +51,5 @@ then
    dnf install mysql -y
    VALIDATE $? "MYSQL"
 else
-    echo "python3 is already installed ... nothing to do"
+    echo "python3 is already installed ... $Y nothing to do $N"
 fi 
