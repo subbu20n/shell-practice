@@ -6,9 +6,9 @@ MSG=""
 
 while IFS= read -r line
 do 
-  USAGE=$(df -hT | awk '{print $6f}' | cut -d "%" -f1)
-  PARTITION=$(df -hT | awk '{print $7f'})
-
+  USAGE=$(echo $line | awk '{print $6f}' | cut -d "%" -f1)
+  PARTITION=$(echo $line | awk '{print $7f'})
+  
   if [ $USAGE -ge $DISK_THRESHOLD ]
   then 
      MSG="HIGH DISK USAGE ON $PARTITION: $USAGE \n"
