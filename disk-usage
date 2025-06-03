@@ -1,19 +1,18 @@
 #!/bin/bash
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
-DISK_THRESHOLD=1 # In project we need to keep 70 or 0 percentage
+DISK_THRESHOLD=1 # in priject we have to give more than 80%
 MSG=""
 
 while IFS= read -r line
 do 
-  USAGE=$(echo $line | awk '{print $6f}' | cut -d "%" -f1)
-  PARTITION=$(echo $line | awk '{print $7f}')
+  USAGE=$(df -hT | awk '{print $6f}' | cut -d "%" -f1)
+  PARTITION=$(df -hT | awk '{print $7f'})
 
   if [ $USAGE -ge $DISK_THRESHOLD ]
-  then
-     MSG+="HIGH DISK USAGE ON $PARTITION: $USAGE \n"
-
+  then 
+     MSG="HIGH DISK USAGE ON $PARTITION: $USAGE \n"
   fi
-done <<< $DISK_USAGE 
+ done <<< $DISK_USAGE
 
-    echo -e $MSG
+   echo -e "$MSG"
