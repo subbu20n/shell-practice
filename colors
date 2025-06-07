@@ -8,3 +8,6 @@ echo -e "\e[35m hello subbu"
 echo -e "\e[36m hello subbu"
 echo -e "\e[37m hello subbu"
 echo -e "\e[0m hello subbu"
+
+echo -e "\e[31m hello subbu"
+echo -e " hello no colours"
