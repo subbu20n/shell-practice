@@ -1,9 +1,10 @@
-#!/bin/bash
+#1/bin/bash
 
-echo -e "\e[31m hello world"
-echo  -e "\e[31m hello world"
-echo -e "\e[33m hello world"
-echo -e "\e[34m hello wolrd"
-echo -e "\e[35m hello world"
-echo -e "\e[36m hello world"
-echo -e "\e[37 hello world"
+echo -e "\e[31m hello subbu"
+echo -e "\e[32m hello subbu"
+echo -e "\e[33m hello subbu"
+echo -e "\e[34m hello subbu"
+echo -e "\e[35m hello subbu"
+echo -e "\e[36m hello subbu"
+echo -e "\e[37m hello subbu"
+echo -e "\e[0m hello subbu"
