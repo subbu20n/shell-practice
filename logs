@@ -10,24 +10,24 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
-echo "script executed at : $(date)" &>> $LOG_FILE
-echo -e "Script started executed at: $(date)" &>> $LOG_FILE
+
+echo -e "Script started executed at: $(date)" | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ]
 then 
-   echo -e "$R ERROR:: please run the script with root access $N" &>> $LOG_FILE
+   echo -e "$R ERROR:: please run the script with root access $N" | tee -a $LOG_FILE
    exit 1
 else
-   echo "you are running root acces" &>> $LOG_FILE
+   echo "you are running root acces" | tee -a $LOG_FILE
 fi
 
 # validate function takes input as exit status what command they tried to install
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo "Installing $2 is ... $G SUCCESS $N" &>> $LOG_FILE
+        echo "Installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
     else
-        echo "Installing $2 is ... $R FAILURE $N" &>> $LOG_FILE
+        echo "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE
         exit 1
     fi         
 }
@@ -35,11 +35,11 @@ VALIDATE(){
 dnf list installed mysql &>>LOG_FILE
 if [ $? -ne 0 ]
 then
-   echo -e "mysql is not installed ... going to install" &>> $LOG_FILE
+   echo -e "mysql is not installed ... going to install" | tee -a $LOG_FILE
    dnf install mysql -y &>>LOG_FILE
    VALIDATE $? "MYSQL"
 else
-    echo -e "mysql is already installed ... $Y nothing to do $N" &>> $LOG_FILE
+    echo -e "mysql is already installed ... $Y nothing to do $N" | tee -a $LOG_FILE
 fi 
 
 dnf list installed nginx &>>LOG_FILE
@@ -49,7 +49,7 @@ then
    dnf install nginx -y &>>LOG_FILE
    VALIDATE $? "NGINX"
 else
-    echo -e "nginx is already installed ... $Y nothing to do $N" &>> $LOG_FILE
+    echo -e "nginx is already installed ... $Y nothing to do $N" | tee -a $LOG_FILE
 fi 
 
 dnf list installed python3 &>>LOG_FILE
@@ -59,5 +59,5 @@ then
    dnf install mysql -y &>>LOG_FILE
    VALIDATE $? "MYSQL"
 else
-    echo -e "python3 is already installed ... $Y nothing to do $N" $>> $LOG_FILE
+    echo -e "python3 is already installed ... $Y nothing to do $N" | tee -a $LOG_FILE
 fi 
