@@ -18,3 +18,20 @@ else
    echo "installing mysql is: FAILURE"
    exit 1
 fi      
+dnf list installed mysql
+
+if [ $? - ne 0 ]
+then
+   echo "mysql is not installed ... going to install"
+   dnf install mysql -y
+   if [ $? -eq 0 ]
+   then
+      echo "Installing mysql is ... SUCCESS"
+   else 
+       echo "Installing mysql is ... FAILURE"
+   fi
+else 
+    echo "mysql is already installed ... nothing to do"
+fi        
+
+    
