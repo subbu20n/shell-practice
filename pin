@@ -2,7 +2,7 @@
 NUMBER1=100
 NUMBER2=200
 
-TIMESTAMP = $(date)
+TIMESTAMP=$(date)
 echo "enter your pin number"
 read PIN
 echo " your number is: $PIN"
