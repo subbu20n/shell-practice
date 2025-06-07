@@ -1,4 +1,6 @@
 #!/bin/bash
+PERSON1=Subbu
+PERSON2=Arun
 
 echo "Subbu: hi Arun im fine"
 echo "Arun: hlo subbu where are you"
