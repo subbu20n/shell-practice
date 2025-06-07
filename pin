@@ -1,6 +1,6 @@
 #!/bin/bash
 NUMBER1=100
-NUMBER2=200
+NUMBER2=subbu
 
 TIMESTAMP=$(date)
 echo "enter your pin number"
