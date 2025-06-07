@@ -6,4 +6,4 @@ echo "$PERSON1: hi $PERSON2 im fine"
 echo "$PERSON2: hlo $PERSON1 where are you"
 echo "$PERSON1: im in hyd"
 echo "$PERSON2: im in bangalore"
-echo "$PERSON1: ok $PERSON2
+echo "$PERSON1: ok $PERSON2"
