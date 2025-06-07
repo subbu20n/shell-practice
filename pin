@@ -8,5 +8,5 @@ read PIN
 echo " your number is: $PIN"
 echo "script executed at: $TIMESTAMP"
 
-sum=$(( $NUMBER1 and $NUMBER2 ))
+SUM=$(( $NUMBER1 + $NUMBER2 ))
 echo "sum of $NUMBER1 and $NUMBER2: $SUM"
