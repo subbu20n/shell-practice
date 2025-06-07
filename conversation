@@ -2,8 +2,8 @@
 PERSON1=Subbu
 PERSON2=Arun
 
-echo "$person1: hi $person2 im fine"
-echo "$person2: hlo $person1 where are you"
-echo "$person1: im in hyd"
-echo "$person2: im in bangalore"
-echo "$person1: ok $person2"
+echo "$PERSON1: hi $PERSON2 im fine"
+echo "$PERSON2: hlo $PERSON1 where are you"
+echo "$PERSON1: im in hyd"
+echo "$PERSON2: im in bangalore"
+echo "$PERSON1: ok $PERSON2
