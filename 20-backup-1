@@ -65,9 +65,9 @@ FILES_TO_DELETE=$(find $SCRIPT_DIR -name "*.log" -mtime +14)
 if [ ! -z "$FILES" ]
 then 
   echo "Files to zip are: $FILES"
-  TIMESTAMP=$(date +%f-%M-%H-%S)
-  ZIP_FILE=$DEST_DIR/app-logs-TIMESTAMP.zip
-  find $SCRIPT_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILE"
+  TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
   if [ -f "$ZIP_FILE" ]
   then
      echo "successfully created a zip file" 
