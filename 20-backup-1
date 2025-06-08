@@ -3,85 +3,68 @@
 USERID=$(id -u)
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=${3:-14} # if DAYS are provided that will be considered, otherwise default 14 days
+DAYS=$(3:-14)
 
-LOGS_FOLDER="/var/log/shellscript-logs"
-SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
-LOG_FILE="$LOGS_FOLDER/backup.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-# validate functions takes input as exit status, what command they tried to install
-VALIDATE(){
-    if [ $1 -eq 0 ]
-    then
-        echo -e "$2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
-    else
-        echo -e "$2 is ... $R FAILURE $N" | tee -a $LOG_FILE
-        exit 1
-    fi
-}
+LOGS_FOLDER="/var/log/shellscript-logs"
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
+LOG_FILE="$LOGS_FOLDER/backup.log"
 
-check_root(){
-    if [ $USERID -ne 0 ]
-    then
-        echo -e "$R ERROR:: Please run this script with root access $N"
-        exit 1 #give other than 0 upto 127
-    else
-        echo "You are running with root access" 
-    fi
-}
 
-check_root
 mkdir -p $LOGS_FOLDER
+echo "Script started execution at : $(date)" | tee -a $LOG_FILE
+check_root(){
+if [ $USERID -ne 0 ]
+then 
+   echo -e "$R ERROR:: please run this script with root access $N" | tee -a $LOG_FILE
+    exit 1 # give other than 0 upto 127
+else
+   echo "you are running with root access" | tee -a $LOG_FILE
+fi 
+}
+
+#validate function takes input as exit status what command they tried to install
+
+VALIDATE(){
+   if [ $1 -eq 0 ]
+   then 
+      echo -e "Installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE 
+   else
+      echo -e "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE
+      exit 1
+   fi      
+}
 
 USAGE(){
-    echo -e "$R USAGE:: $N sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>"
+    echo -e "$R USAGE:: $N sh 20-backup-1 <source-directory> <destination-directory> <optional(days)>"
     exit 1
 }
 
 if [ $# -lt 2 ]
-then
-    USAGE
-fi
+then 
+   USAGE 
+fi 
 
 if [ ! -d $SOURCE_DIR ]
-then
-    echo -e "$R Source Directory $SOURCE_DIR does not exist. Please check $N"
-    exit 1
-fi
+then 
+   echo -e  " $R source directory $SOURCE_DIR does not exists please check $N"
+   exit q
+fi 
 
 if [ ! -d $DEST_DIR ]
 then
-    echo -e "$R Destination Directory $DEST_DIR does not exist. Please check $N"
-    exit 1
-fi
+   echo -e "$R destinataion directory $DEST_DIR does not exists please check $N"
+   exit 1
+fi 
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
-
+FILES_TO_DELETE=$(find $SCRIPT_DIR -name "*.log" -mtime +14)
 if [ ! -z "$FILES" ]
-then
-    echo "Files to zip are: $FILES"
-    TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-
-    if [ -f $ZIP_FILE ]
-    then
-        echo -e "Successfully created zip file"
-
-        while IFS= read -r filepath
-        do
-            echo "Deleting file: $filepath" | tee -a $LOG_FILE
-            rm -rf $filepath
-        done <<< $FILES
-        echo -e "Log files older than $DAYS from source directory removed ... $G SUCCESS $N"
-    else
-        echo -e "zip file creation ... $R FAILURE $N"
-        exit 1
-    fi
+then 
+  echo "no files found"
 else
-    echo -e "No log files found older than 14 days ... $Y SKIPPING $N"
-fi         
+echo -e "no log file found older than 14 days ... $Y SKIPPING $N"  
+fi 
