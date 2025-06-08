@@ -52,7 +52,7 @@ fi
 if [ ! -d $SOURCE_DIR ]
 then 
    echo -e  " $R source directory $SOURCE_DIR does not exists please check $N"
-   exit q
+   exit 1
 fi 
 
 if [ ! -d $DEST_DIR ]
