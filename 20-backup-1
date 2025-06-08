@@ -64,7 +64,24 @@ fi
 FILES_TO_DELETE=$(find $SCRIPT_DIR -name "*.log" -mtime +14)
 if [ ! -z "$FILES" ]
 then 
-  echo "no files found"
+  echo "Files to zip are: $FILES"
+  TIMESTAMP=$(date +%f-%M-%H-%S)
+  ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip
+  find $SCRIPT_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILE"
+  if [ -f "$ZIP_FILE" ]
+  then
+     echo "successfully created a zip file" 
+     while IFS= read -r filepath 
+     do 
+       echo "Deleting file: $filepath"
+       rm -rf $filepath
+     done <<< $FILES
+
+      echo -e "log files older than 14days from source directory removed ... $G SUCCESS $N"
+  else 
+     echo -e " zip file creation ...$R FAILURE $N"
+  fi      
+
 else
 echo -e "no log file found older than 14 days ... $Y SKIPPING $N"  
 fi 
