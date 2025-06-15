@@ -3,3 +3,10 @@ set -e
 echo "hello subbu"
 echooo "hello supriya"
 echo "hello kiran"
+
+
+set -e 
+failure() {
+    echo "failed at: $1 $2"
+}
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
