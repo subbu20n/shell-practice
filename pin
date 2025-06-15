@@ -1,12 +1,7 @@
 #!/bin/bash
 NUMBER1=100
-NUMBER2=subbu
+NUMBER2=200
 
-TIMESTAMP=$(date)
-echo "enter your pin number"
+echo "please enter your pin number"
 read PIN
-echo " your number is: $PIN"
-echo "script executed at: $TIMESTAMP"
-
-SUM=$(( $NUMBER1 + $NUMBER2 ))
-echo "sum of $NUMBER1 and $NUMBER2: $SUM"
+echo "your number is: $PIN"
