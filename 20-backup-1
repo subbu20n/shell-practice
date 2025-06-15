@@ -40,46 +40,50 @@ VALIDATE(){
 } 
 
 usage() {
-   echo -e "$R USAGE:: $N 20-backup-1 <source-directory> <destination-directory> <ptional(days)>"
+   echo -e "$R USAGE:: $N <source-directory> <destination-directory> <optional(days)>"
    exit 1
 }
 
 if [ $# -lt 2 ]
 then 
-  usage 
+  USAGE
 fi 
 
 if [ ! -d $SOURCE_DIR ]
 then 
-  echo -e :"$R source directory $SOURCE_DIR does not exist please check $N"
-  exit 1 
+  echo -e "$R source directory $SOURCE_DIR does not exist please check $N" 
+  exit 1
 fi 
 
-if [ ! -d $DEST_DIR ]
+if [ ! -d $DEST_DIR ] 
 then 
-  echo -e "$R source directory $DEST_DIR does not exist please check $N" 
+  echo -e "$R destination directory $DEST_DIR does not exist please check $N" 
   exit 1
 fi 
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 if [ ! -z "$FILES" ]
 then 
-  echo "files to zip are: $FILES"
-  TIMESTAMP=$(date +%F-%m-%h-%s)
-  ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip 
-  find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-  if [ -f "$ZIP_FILE" ]
-  then 
-     echo "successfully created a zip file" | tee -a $LOG_FILE 
-     while IFS= read -r filepath 
-     do 
-       echo "Deleting file: $filepath"
-       rm -rf $filepath 
-     done <<< $FILES 
-     echo -e "log files found older than $DAYS from source directory removed... $Y SKIPPING $N" | tee -a $LOG_FILE
+   echo "files to zip are: $FILES"
+   TIMESTAMP=$(date +%F-%h-%m-%s)
+   ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip 
+   find $SCRIPT_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" 
+if [ -f "$ZIP_FILE" ]
+then 
+  echo "successfully created a zip file" 
+  while IFS= read -r filepath 
+  do 
+    echo "Deleting file: $filepath"
+    rm -rf $filepath 
+  done <<< $FILES 
+  echo -e "log files found older than $DAYS from source directory removed... $G SUCCESS $N" | tee -a $LOG_FILE 
 else 
-    echo -e "zip file creation... $R FAILURE $N" | tee -a $LOG_FILE 
-  fi 
-else 
-  echo -e "no log files found older than 14days... $Y SKIPPING $N" | tee -a $LOG_FILE 
-fi    
+  echo -e "zip file creation... $Y FAILURE $N" | tee -a $LOG_FILE 
+fi 
+else  
+   echo -e "no log files found older than $DAYS... $Y SKIPPING $N" | tee -a $LOG_FILE 
+fi 
+ 
+END_TIME=$(date +%s)
+TOTAL_TIME=$(( $END_TIME - $START_TIME ))
+echo -e "script execution completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE 
