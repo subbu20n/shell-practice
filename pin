@@ -6,6 +6,7 @@ echo "please enter your pin number"
 read  PIN
 echo "your number is: $PIN"
 
-TIMESTAMP: $(date)
+TIMESTAMP= $(date) 
+echo "script executes at : $TIMESTAMP"
 SUM= "${{ $NUMBER1 +$NUMBER2 }}"
-echo: "$NUMBER and $NUMBER is: $SUM"
+echo: "sum of $NUMBER1 and $NUMBER2 is: $SUM"
