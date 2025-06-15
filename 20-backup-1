@@ -74,8 +74,8 @@ then
 # else 
 #    echo -e "zip file creation... $R FAILURE $N" | tee -a $LOG_FILE 
 #    exit 1
-
-else 
+#i
+#lse 
   echo -e "no log files found older than $days... $Y SKIPPING $N" | tee -a $LOG_FILE
 fi 
 END_TIME=$(date +%s)
