@@ -76,7 +76,7 @@ then
     echo "Deleting file: $filepath"
     rm -rf $filepath 
   done <<< $FILES 
-  echo -e "log files found older than $DAYS from source directory removed... $G SUCCESS $N" | tee -a $LOG_FILE 
+  echo -e "log files older than $DAYS from source directory removed... $G SUCCESS $N" | tee -a $LOG_FILE 
 else 
   echo -e "zip file creation... $Y FAILURE $N" | tee -a $LOG_FILE 
 fi 
