@@ -1,6 +1,6 @@
 #!/bin/bash
  
-echo "Subbu: hi how are you Arun
+echo "Subbu: hi how are you Arun"
 echo "ARUN: hlo subbu im fine"
 echo "Subbu: where are you going"
 echo "Arun: im in bangalore"
