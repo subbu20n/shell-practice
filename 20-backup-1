@@ -60,7 +60,7 @@ if [ ! -z "$FILES" ]
 then 
   echo "files to zip are: $FILES" | tee -a $LOG_FILE
   TIMESTAMP=$(date +%F -%m-%h-%s) | tee -a $LOG_FILE
-  ZIP_FILES=$DEST_DIR/app-logs-$TIMESTAMP.zip | tee -a $LOG_FILE
+  ZIP_FILE=$DEST_DIR/app-logs-$TIMESTAMP.zip | tee -a $LOG_FILE
   find $SOURCE_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILE" | tee -a $LOG_FILE
 if [ -f "$ZIP_FILE" ]
 then 
