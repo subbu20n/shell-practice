@@ -1,7 +1,7 @@
 #!/bin/bash
 NUMBER=$1
 
-if [ $NUMBER -lt 10 ]
+if [ $NUMBER -lt 19 ]
 then 
   echo "given number $NUMBER is less than or equal 100"
 else 
