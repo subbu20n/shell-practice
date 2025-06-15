@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -e 
+set -e
 failure(){
-    echo " failed at : $1 $2"
-    }
-trap 'failure "${LINENO}" ${BASH_COMMAND}"' ERR
+    echo "failed at: $1 $2"
+}
+trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR
 
 START_TIME=$(date +%s)
 USERID=$(id -u)
@@ -43,7 +43,7 @@ id roboshop
 if [ $? -ne 0 ]
 then
     useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$LOG_FILE
-    VALIDATE $? "Creating roboshop system user"
+
 else
     echo -e "System user roboshop already created ... $Y SKIPPING $N"
 fi
