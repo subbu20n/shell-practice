@@ -39,7 +39,7 @@ for package in ${PACKAGES[0]}
 dnf list installed $PACKAGE &>>$LOG_FILE
 if [ $PACKAGE -ne 0 ] 
 then 
-  echo "$package installed... going to install" 
+  echo "$package is not installed... going to install"
   dnf install $package -y &>>$LOG_FILE
   VALIDATE $? "$PACKAGE" | tee -a $LOG_FILE 
 else 
