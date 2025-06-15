@@ -1,5 +1,5 @@
 #!/bin/bash 
-GREETING= "Hello good morning"
+GREETING="Hello good morning"
 echo "$GREETING"
 
 echo "pid of the script1: $$"
