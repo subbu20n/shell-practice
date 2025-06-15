@@ -3,4 +3,4 @@ GREETING="Hello goodmorning subbu"
 echo "$GREETING"
 
 echo "pid of the script1: $$"
-./script-2
+source ./script-2
