@@ -1,6 +1,5 @@
-#!/bin/bash
-
-echo "pid of the script-2: $$"
+#!/bin/bash 
+echo "pid of the script2: $$"
 
 echo "$GREETING"
 
