@@ -10,7 +10,7 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
-PACKAGES=("mysql" "nginx" "python3" "httpd")
+PACKAGES=("mysql" "npython3" "nginx" "httpd")
 
 mkdir -p $LOGS_FOLDER
 
@@ -35,18 +35,12 @@ VALIDATE(){
     fi         
 }
 
-#for package in  ${PACKAGES[@]}
-for package in $@
-do
-
-dnf list installed $PACKAGE &>> $LOG_FILE
-if [ $? -ne 0 ]
+for package in ${PACKAGES[0]}
+dnf list installed $PACKAGE &>>LOG_FILE 
+if [ $PACKAGE -ne 0 ] 
 then 
-   echo -e "$PACKAGE is not installed ... going to install" | tee -a $LOG_FILE
-   dnf install $PACKAGE -y &>> $LOG_FILE 
-   VALIDATE $? "$PACKAGE" 
+  echo "$package installed... going to install" 
+  dnf install $package -y &>>LOG_FILE 
+  VALIDATE $? "$PACKAGE" | tee -a $LOG_FILE 
 else 
-   echo -e "nothing to do $PACKAGE ... $Y already installed $N" | tee -a $LOG_FILE 
-fi 
-done          
-  
+  echo -e "nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE
