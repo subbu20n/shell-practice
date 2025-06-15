@@ -39,27 +39,47 @@ VALIDATE(){
    fi      
 }
 USAGE(){
-   echo -e "$R USAGE:: $N 20-backup-1 <source-directory> <destination-directory> <optional(days)> "
+   echo -e "$R USAGE:: $N 20-backup-1 <source-directory> <destination-directory> <optional(days)>" | tee -a $LOG_FILE
    exit 
 }
 
 if [ ! -d $SOURCE_DIR ]
 then 
-  echo -e "$R source directory $SOURCE_DIR does not exist please check $N" 
+  echo -e "$R source directory $SOURCE_DIR does not exist please check $N" | tee -a $LOG_FILE
   exit 1
 fi 
 
 if [ ! -d $DEST_DIR ]
 then 
-  echo -e "$R destnation directory $DEST_DIR does not exixt please check $N"
+  echo -e "$R destnation directory $DEST_DIR does not exixt please check $N" | tee -a $LOG_FILE
   exit 1 
 fi 
 
-FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14) 
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14) | tee -a $LOG_FILE
 if [ ! -z "$FILES" ] 
 then 
-  echo "no files found"
+  echo "files to zip are: $FILES" | tee -a $LOG_FILE
+  TIMESTAMP=$(date +%F -%m-%h-%s) | tee -a $LOG_FILE
+  ZIP_FILES=$DEST_DIR/app-logs-$TIMESTAMP.zip | tee -a $LOG_FILE
+  find $SOURCE_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILES" | tee -a $LOG_FILE
+if [ -f "ZIP_FILES" ] 
+then 
+   echo "successfully created a zip file" | tee -a $LOG_FILE
+   while IFS= read -r filepath 
+   do 
+     echo "Deleting file: $filepath"
+     rm -rf $filepath 
+   done < $FILES 
+  echo -e "log files older than 14days found from source directory... $G SUCCESS $N" | | tee -a $LOG_FILE
 else 
-  echo " no log files found older than 14days... $Y SKIPPING $N" | tee -a $LOG_FILE 
-  
+   echo -e "zip file creation... $R FAILURE $N" | tee -a $LOG_FILE 
+   exit 1
+fi 
+else 
+  echo -e "no log files found older than 14days... $Y SKIPPING $N" | tee -a $LOG_FILE
+fi 
+END_TIME=$(date +%s)
+TOTAL_TIME=$(( $END_TIME - $START_TIME ))
+
+echo -e "script execution completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE 
 
