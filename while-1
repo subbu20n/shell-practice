@@ -1,13 +1,7 @@
-#!/bin/bash
+#1/bin/bash 
 a=0
-
-wile [ $a - lt 10 ]
+while [ $a -lt 10 ]
 do 
-   echo $a 
-   a=`expr $a + 1`
-done   
-
-while IFS= read -r line 
-do 
-  echo $line 
-done < pin  
+  echo "$a"
+  a=`expr $a + a`
+done 
