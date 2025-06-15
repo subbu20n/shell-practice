@@ -69,7 +69,7 @@ then
    do 
      echo "Deleting file: $filepath"
      rm -rf $filepath 
-   done <<< $FILES
+   done < $FILES 
   echo -e "log files older than 14days found from source directory removed... $G SUCCESS $N" | tee -a $LOG_FILE
 else 
    echo -e "zip file creation... $R FAILURE $N" | tee -a $LOG_FILE 
@@ -80,6 +80,5 @@ else
 fi 
 END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME ))
-
 echo -e "script execution completed successfully, $Y time taken: $TOTAL_TIME seconds $N" | tee -a $LOG_FILE 
 
