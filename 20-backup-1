@@ -3,7 +3,7 @@
 USERID=$(id -u)
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14)
+DAYS=${3:-14}
 
 R="\e[31m"
 G="\e[32m"
@@ -61,8 +61,8 @@ then
   echo "files to zip are: $FILES" | tee -a $LOG_FILE
   TIMESTAMP=$(date +%F -%m-%h-%s) | tee -a $LOG_FILE
   ZIP_FILES=$DEST_DIR/app-logs-$TIMESTAMP.zip | tee -a $LOG_FILE
-  find $SOURCE_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILES" | tee -a $LOG_FILE
-if [ -f "ZIP_FILES" ] 
+  find $SOURCE_DIR -name "*.log" -mtime +14 | zip -@ "$ZIP_FILE" | tee -a $LOG_FILE
+if [ -f "$ZIP_FILE" ]
 then 
    echo "successfully created a zip file" | tee -a $LOG_FILE
    while IFS= read -r filepath 
