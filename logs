@@ -29,6 +29,7 @@ VALIDATE() {
     else
        echo -e "installing $2 is... $R FAILURE $N"  
        exit 1
+    fi 
 }
 
 dnf list installed mysql -y &>>$LOG_FILE
