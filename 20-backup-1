@@ -38,51 +38,28 @@ VALIDATE(){
       exit 1
    fi      
 }
-
 USAGE(){
-    echo -e "$R USAGE:: $N sh 20-backup-1 <source-directory> <destination-directory> <optional(days)>"
-    exit 1
+   echo -e "$R USAGE:: $N 20-backup-1 <source-directory> <destination-directory> <optional(days)> "
+   exit 
 }
-
-if [ $# -lt 2 ]
-then 
-   USAGE 
-fi 
 
 if [ ! -d $SOURCE_DIR ]
 then 
-   echo -e  " $R source directory $SOURCE_DIR does not exists please check $N"
-   exit 1
+  echo -e "$R source directory $SOURCE_DIR does not exist please check $N" 
+  exit 1
 fi 
 
 if [ ! -d $DEST_DIR ]
-then
-   echo -e "$R destinataion directory $DEST_DIR does not exists please check $N"
-   exit 1
-fi 
-
-FILES_TO_DELETE=$(find $SCRIPT_DIR -name "*.log" -mtime +$DAYS)
-if [ ! -z "$FILES" ]
 then 
-    echo "Files to zip are: $FILES"
-    TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
-
-  if [ -f "$ZIP_FILE" ]
-  then
-     echo "successfully created a zip file" 
-     while IFS= read -r filepath 
-     do 
-       echo "Deleting file: $filepath"
-       rm -rf $filepath
-     done <<< $FILES
-
-      echo -e "log files older than 14days from source directory removed ... $G SUCCESS $N"
-  else 
-     echo -e " zip file creation ...$R FAILURE $N"
-  fi      
-
-else
-echo -e "no log file found older than 14 days ... $Y SKIPPING $N"  
+  echo -e "$R destnation directory $DEST_DIR does not exixt please check $N"
+  exit 1 
 fi 
+
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14) 
+if [ ! -z "$FILES" ] 
+then 
+  echo "no files found"
+else 
+  echo " no log files found older than 14days... $Y SKIPPING $N" | tee -a $LOG_FILE 
+  
+
