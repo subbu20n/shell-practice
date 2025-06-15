@@ -1,4 +1,5 @@
 #!/bin/bash 
+set -e 
 echo "hello subbu"
 echooo "hello supriya"
 echo "hello kiran"
