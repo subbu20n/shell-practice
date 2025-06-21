@@ -4,4 +4,4 @@ echo "hello subbu"
 
 echo "pid of the script-1: $$"
 
-./script-2
+source ./script-2
