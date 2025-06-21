@@ -2,6 +2,6 @@
 
 echo "hello subbu"
 
-echo "pid of the script-1: $$
+echo "pid of the script-1: $$"
 
-./scr
+./script2
