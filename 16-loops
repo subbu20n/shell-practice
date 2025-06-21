@@ -30,6 +30,7 @@ VALIDATE() {
   else 
      echo -e "installng $2 is... $R FAILURE $N" | tee -a $LOG_FILE 
      exit 1   
+  fi    
 }
 
 for package in ${PACKAGES[0]}
