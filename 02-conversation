@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+echo "Subbu: Hi arun how are you"
+echo "Arun: Hlo subbu i am fine what about you"
+echo "Subbu: Where are you going" 
+echo "Arun: I am going to wayanad"
+echo "Subbu: ok carryon"

@@ -1,9 +1,0 @@
-#!/bin/bash
-PERSON1=$1
-PERSON2=$2
- 
-echo "$PERSON1: hi how are you $PERSON2"
-echo "$PERSON2: hlo $PERSON1 im fine"
-echo "$PERSON1: where are you going"
-echo "$PERSON2: im in bangalore"
-echo "$PERSON1: ok $PERSON2"
