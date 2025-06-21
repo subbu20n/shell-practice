@@ -1,0 +1,50 @@
+#!/bin/bash 
+USERID=$(date)
+if [ $USERID -ne 0 ]
+then 
+   echo "ERROR: please run this script with root access"
+   exit 1
+else 
+   echo "you ar running with a root access" 
+fi 
+
+# valiadate function takes input as exit status what command they tried to install 
+VALIDATE() {
+   if [ $? -eq 0 ]
+   then 
+     echo "installing $1 is... SUCCESS"
+   else 
+     echo "installing $2 is... FAILURE"   
+     exit 1
+} 
+
+dnf list installed mysql -y 
+if [ $? -ne 0 ]
+then 
+   echo "mysql is not install... going to install"
+   dnf install mysql -y 
+   VALIDATE $? "MYSQL" 
+else 
+  echo "mysql is already installed... nothing to do" 
+fi 
+
+dnf list installed nginx -y 
+if [ $? -ne 0  ]
+then 
+    echo "nginx is not installed... going to install"
+     dnf install nginx -y 
+     VALIDATE $? "NGINX" 
+else 
+    echo "nginx is already install... nothing to do" 
+fi 
+
+dnf list installed python3 -y 
+if [ $? -ne 0 ]
+then 
+   echo "python3 is not installed... going to install"
+   dnf list install python3 -y 
+   VALIDATE $? "PYTHON3" 
+else 
+   echo "python3 is already installed... nothing to do" 
+fi        
+
