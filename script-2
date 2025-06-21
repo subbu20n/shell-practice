@@ -1,5 +1,8 @@
 #!/bin/bash 
 
-echo "pid of the script-2: $$"
+GREETING: "hello subbu"
+echo "$GREETING" 
 
-echo "GREETING"
+echo " pid of the script-1: $$"
+
+./script-1 

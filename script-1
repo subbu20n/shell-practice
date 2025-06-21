@@ -1,7 +1,8 @@
-#!/bin/bash/
+#!/bin/bash 
 
-echo "hello subbu"
+echo "hello subbu" 
+echo "$GREETING" 
 
-echo "pid of the script-1: $$"
+echo "pid of the script-2: $$"
 
 source ./script-2
