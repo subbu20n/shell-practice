@@ -1,7 +1,9 @@
 #!/bin/bash 
+PERSON1=Subbu
+PERSON2=Supriya
 
-echo "Subbu: Hi arun how are you"
-echo "Arun: Hlo subbu i am fine what about you"
-echo "Subbu: Where are you going" 
-echo "Arun: I am going to wayanad"
-echo "Subbu: ok carryon"
+echo "$PERSON1: Hi $PERSON2 how are you"
+echo "$PERSON2: Hlo $PERSON1 i am fine what about you"
+echo "$PERSON1: Where are you going" 
+echo "$PERSON2: I am going to wayanad"
+echo "$PERSON1: ok carryon"
