@@ -11,4 +11,4 @@ echo -e "\e[37m hello subbu"
 
 
 echo -e "\e[31m hello subbu"
-echo -e "hello supriya"
+echo -e "hello supriya \e[0m"
