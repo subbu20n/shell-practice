@@ -1,5 +1,5 @@
 #!/bin/bash 
-NUMBER=$1 
+NUMBER=$80
 
 #-gt -->gretaer than 
 #-lt---> less than
