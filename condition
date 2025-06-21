@@ -1,9 +1,0 @@
-#!/bin/bash
-NUMBER=$1
-
-if [ $NUMBER -lt 19 ]
-then 
-  echo "given number $NUMBER is less than or equal 100"
-else 
-  echo "give number $NUMBER is not less than 100"
-fi 
