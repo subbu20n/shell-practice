@@ -1,18 +1,16 @@
-#!/bin/bash
-
+#!/bin/bash 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
-DISK_THRESHOLD=1 # in priject we have to give more than 80%
+DISK_THRESHOLD=1 
 MSG=""
-
-while IFS= read -r line
+IP=$(url http://169.254.169.254/latest/meta-data/local-ipv4)
+while IFS = read line 
 do 
-  USAGE=$(echo $line | awk '{print $6f}' | cut -d "%" -f1)
-  PARTITION=$(echo $line | awk '{print $7f'})
-  
+  USAGE=$(echo $0 | awk '{print $6f}' | cut -d "%" -f1)
+  partition=$(echo $0 | awk '{print $7f}')
   if [ $USAGE -ge $DISK_THRESHOLD ]
   then 
-     MSG+="HIGH DISK USAGE ON $PARTITION: $USAGE \n"
-  fi
- done <<< $DISK_USAGE
-
-   echo -e "$MSG"
+    MSG+=HIGH DISK USAGE 0N $PARTITION: $USAGE % <br> 
+  fi 
+done <<< $DISK_USAGE 
+#echo -e $msg 
+sh mail.sh "DEVOPS_TEAM" "HIGH DISK USAGE" "$IP" "MSG" "info joindevops.com" "ALERT-HIGH DISK USAGE" 

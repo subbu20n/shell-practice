@@ -1,4 +1,3 @@
-#!/bin/bash
+#!/bin/nash 
 
 echo "hello world"
-
