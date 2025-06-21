@@ -13,7 +13,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER 
 echo "script execution statrted at: $(date)" &>>$LOG_FILE
 
-if [ "$USERID" -ne 0 ]
+if [ $USERID -ne 0 ]
 then 
    echo -e "$R ERROR:: please run this script with root access $N" &>>$LOG_FILE
    exit 1 
