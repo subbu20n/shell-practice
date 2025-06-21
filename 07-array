@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+MOVIES=("subbu","arun","supriya","bhanu")
+
+echo "first movie : ${MOVIES[0]}"
