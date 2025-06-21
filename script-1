@@ -1,6 +1,7 @@
-#!/bin/bash
-GREETING="Hello goodmorning subbu"
-echo "$GREETING"
+#!/bin/bash/
 
-echo "pid of the script1: $$"
-source ./script-2
+echo "hello subbu"
+
+echo "pid of the script-1: $$
+
+./scr
