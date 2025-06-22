@@ -1,6 +1,6 @@
 #!/bin/bash 
-GREETING = "Hello world"
+GREETING = "Hello subbu" 
 echo "$GREETING" 
-echo "pid of the script1: $$"
+ech "pid of the script-1: $$"
 
 ./script-2
