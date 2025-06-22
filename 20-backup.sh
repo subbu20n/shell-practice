@@ -52,10 +52,10 @@ then
    exit 1 
 fi 
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +$days)
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 if [ ! -z $FILES ]
 then 
-   echo "files found" 
+   echo "files to zip are: $FILES"
 else 
-   echo -e "no log files found older than $days ... $Y SKIPPING $N" | tee -a $LOG_FILE 
+   echo -e "no log files found older than 14days ... $Y SKIPPING $N" | tee -a $LOG_FILE 
 fi       
