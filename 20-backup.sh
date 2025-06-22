@@ -52,7 +52,7 @@ then
    exit 1 
 fi 
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 if [ ! -z $FILES ]
 then 
    echo "files to zip are: $FILES"
@@ -67,7 +67,7 @@ then
    do 
      echo -e "Deleting filepath: $filepath"
      rm -rf $filepath 
-   done >>> $FILES_TO_DELETE 
+   done >>> $FILES 
       echo -e "log files older than 14days from source directory removed ... $G SUCCESS $N" | tee -a $LOG_FILE 
    else 
       echo -e "zip file creation failure" | tee -a $LOG_FILE 
