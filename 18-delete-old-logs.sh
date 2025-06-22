@@ -39,7 +39,7 @@ while IFS= read -r filepath
 do 
    echo "deleting file: $filepath"
    rm -rf $filepath 
-done >>> $FILES_TO_DELETE
+done >>>$FILES_TO_DELETE
 
 END_TIME=$(date +%s)
 TOTAL_TIME=$(( $END_TIME - $START_TIME ))
