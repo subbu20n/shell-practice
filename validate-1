@@ -1,8 +1,0 @@
-#!/bin/bash
-set -e
-
-echo "hello subbu"
-
-echooo "hello ram subbu"
-
-echo "hello subbu"
