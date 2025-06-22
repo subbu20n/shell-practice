@@ -1,6 +1,6 @@
 #!/bin/bash 
-GREETING="Hello subbu" 
-echo "$GREETING" 
+GREETING="Hello subbu"
+echo "$GREETING"
 echo "pid of the script-1: $$"
 
-source ./script-2
+scource ./script-2
