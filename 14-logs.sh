@@ -13,53 +13,53 @@ LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER 
 
-echo "script started execution at: $(date) &>>$LOG_FILE
+echo "script started execution at: $(date) &>> $LOG_FILE
 
 if [ $USERID -ne 0 ] 
 then 
-  echo -e "$R ERROR:: please run this script with root access $N"  &>>$LOG_FILE
+  echo -e "$R ERROR:: please run this script with root access $N"  &>> $LOG_FILE
   exit 1 
 else 
-  echo "you are running with root access" &>>$LOG_FILE
+  echo "you are running with root access" &>> $LOG_FILE
 fi 
 
 #validate function takes input as exit status, what command they tried to install 
 validate(){
     if [ $USERID -ne 0 ] 
     then 
-       echo -e "Installing $2 is ... $G SUCCESS $N" &>>$LOG_FILE
+       echo -e "Installing $2 is ... $G SUCCESS $N" &>> $LOG_FILE
     else 
-       echo -e "Installing $2 is ... $R FAILURE $N" &>>$LOG_FILE
+       echo -e "Installing $2 is ... $R FAILURE $N" &>> $LOG_FILE
        exit 1 
     fi    
 }
 
-dnf list installed mysql &>>$LOG_FILE
+dnf list installed mysql &>> $LOG_FILE
 if [ $? -ne 0 ] 
 then 
-  echo -e "Mysql is not installed ... going to install"  &>>$LOG_FILE
-  dnf install mysql -y    &>>$LOG_FILE
+  echo -e "Mysql is not installed ... going to install"  &>> $LOG_FILE
+  dnf install mysql -y    &>> $LOG_FILE
   validate $? "MYSQL" 
 else 
-  echo -e "Nothing to do Mysql .... $Y already installed $N"   &>>$LOG_FILE
+  echo -e "Nothing to do Mysql .... $Y already installed $N"   &>> $LOG_FILE
 fi       
 
-dnf list installed python3  &>>$LOG_FILE
+dnf list installed python3  &>> $LOG_FILE
 if [ $? -ne 0 ] 
 then 
-  echo -e "python3 is not installed ... going to install" &>>$LOG_FILE
-  dnf install mysql -y  &>>$LOG_FILE
+  echo -e "python3 is not installed ... going to install" &>> $LOG_FILE
+  dnf install mysql -y  &>> $LOG_FILE
   validate $? "MYSQL" 
 else 
-  echo -e "Nothing to do python3 .... $Y already installed $N"   &>>$LOG_FILE
+  echo -e "Nothing to do python3 .... $Y already installed $N"   &>> $LOG_FILE
 fi       
 
-dnf list installed nginx  &>>$LOG_FILE
+dnf list installed nginx  &>> $LOG_FILE
 if [ $? -ne 0 ] 
 then 
-  echo -e "nginx is not installed ... going to install"   &>>$LOG_FILE
-  dnf install nginx -y   &>>$LOG_FILE 
+  echo -e "nginx is not installed ... going to install"   &>> $LOG_FILE
+  dnf install nginx -y   &>> $LOG_FILE 
   validate $? "NGINX" 
 else 
-  echo -e "Nothing to do nginx .... $Y already installed $N"   &>>$LOG_FILE
+  echo -e "Nothing to do nginx .... $Y already installed $N"   &>> $LOG_FILE
 fi       
