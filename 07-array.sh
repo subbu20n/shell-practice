@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-MOVIES=("subbu" "arun" "legend" "veera") 
+MOVIES=("subbu" "arun" "legend" "simha") 
 
 echo "first movie: ${MOVIES[0]}" 
 echo "first movie: ${MOVIES[1]}" 
@@ -10,5 +10,5 @@ echo "first movie: ${MOVIES[@]}"
 
 for i in 0 3 
 do 
-  echo "movies: ${MOVIES[$i]}" 
+  echo "movie: ${MOVIES[$i]}" 
 done   
