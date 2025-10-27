@@ -34,14 +34,14 @@ validate(){
 }
 
 for package in ${PACKAGES[@]}
-
-dnf list install $PACKAGE    &>> $LOG_FILE 
-if [ $? -ne 0 ]
-then  
-  echo -e "$package is not installed ... going to install"  | tee -a $LOG_FILE 
-  dnf install $package -y  &>> $LOG_FILE 
-  VALIDATE $? "$PACKAGE" 
-else 
-  echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE 
-fi 
-
+do
+   dnf list installed $PACKAGE    &>> $LOG_FILE 
+   if [ $? -ne 0 ]
+   then  
+     echo -e "$package is not installed ... going to install"  | tee -a $LOG_FILE 
+     dnf install $package -y  &>> $LOG_FILE 
+     VALIDATE $? "$PACKAGE" 
+   else 
+     echo -e "Nothing to do $package... $Y already installed $N" | tee -a $LOG_FILE 
+   fi 
+done 
