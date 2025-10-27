@@ -13,7 +13,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER 
 
-echo "script started execution at: $(date) &>> $LOG_FILE
+echo "script started execution at: $(date)" &>> $LOG_FILE
 
 if [ $USERID -ne 0 ] 
 then 
