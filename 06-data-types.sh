@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-NUMBER1=100
+NUMBER1=Subbu # here string is subbu , string ni addition cheyalemu kabatti we cannot add string ok. 
 NUMBER2=200 
 
 TIMESTAMP=$(date) 
