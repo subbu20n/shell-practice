@@ -9,7 +9,7 @@ then
 else 
   echo "you are running with root access" 
 fi 
-dnf install mysqlsfg -y 
+dnf install mysqlsfghjk -y 
 if [ $? -eq 0 ] 
 then 
   echo "Installing mysql is ... SUCCESS" 
