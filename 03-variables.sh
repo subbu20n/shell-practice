@@ -1,10 +1,10 @@
 #!/bin/bash 
 
-Person1 = Subbu 
-Person2 = Arun 
+PERSON1 = Subbu 
+PERSON2 = Arun 
 
-echo "$Person1: hi $Person2, how are you" 
-echo "$Person2: Hlo $person1, i am fine, what about you?" 
-echo "$Person1: Iam fine $Person2. where are you"
-echo "$Person2: i am in bangalore $Person1" 
-echo "$person1" ok $Person2!"
+echo "$PERSON1: hi $PERSON2, how are you" 
+echo "$PERSON2: Hlo $PERSON1, i am fine, what about you?" 
+echo "$PERSON1: Iam fine $PERSON2. where are you"
+echo "$PERSON2: i am in bangalore $PERSON1" 
+echo "$PERSON1" ok $PERSON2!"
