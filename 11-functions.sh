@@ -11,13 +11,15 @@ else
 fi 
 
 #validate fumction takes input as exit status , what command they tried to do install 
-if [ $1 -eq 0 ] 
-then 
-  echo "Installing $2 is ... SUCCESS" 
-else  
-  echo "Installing $2 is ... FAILURE" 
-  exit 1 
-fi 
+validate(){
+  if [ $1 -eq 0 ] 
+  then 
+     echo "Installing $2 is ... SUCCESS" 
+   else  
+     echo "Installing $2 is ... FAILURE" 
+     exit 1 
+   fi 
+} 
 
 dnf list install mysql 
 if [ $? -ne 0 ] 
