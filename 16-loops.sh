@@ -15,7 +15,7 @@ PACKAGES=("mysql" "nginx" "python3" "httpd")
 mkdir -p $LOGS_FOLDER 
 
 echo -e "script started executed at: $(date)" | tee -a $LOG_FILE 
-if [$USERID -ne 0 ] 
+if [ $USERID -ne 0 ] 
 then 
   echo -e "$R ERROR:: please run this script with root access $N"  | tee -a $LOG_FILE 
   exit 1 
