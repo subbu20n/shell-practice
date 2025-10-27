@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/bash 
 
-MOVIES=("kantara" "arm" "jersey" "madarasi") 
+MOVIES=("subbu" "arun" "legend" "veera") 
 
-echo "First movie: ${MOVIES[0]}"
+echo "first movie: ${MOVIES[0]}" 
