@@ -17,7 +17,8 @@ validate(){
        echo "Installing $2 is ... SUCCESS" 
     else 
        echo "Installing $2 is ... FAILURE" 
-       exit1    
+       exit1 
+    fi       
 }
 
 dnf list installed mysql 
