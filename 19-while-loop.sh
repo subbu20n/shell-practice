@@ -10,4 +10,4 @@ done
 while IFS = read -r line 
 do 
   echo $line 
-done <17-sets.sh   
+done >17-sets.sh   
