@@ -1,4 +1,4 @@
 #!/bin/bash 
 
-echo "PID of the script: $$" 
+echo "PID of the script: $$"
 echo "$GREETING" 
