@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-set -e 
+set -e # when we set -e it exit the when error comes orelse we dont keep set -e whenther error comes also it moves forward in shell
 failure(){
     echo "failed at: $1 $2"
 }
