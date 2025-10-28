@@ -10,4 +10,4 @@
 while IFS= read -r line 
 do 
   echo $line 
-done < script-1.sh
+done < 17-sets.sh 
