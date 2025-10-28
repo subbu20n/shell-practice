@@ -1,15 +1,10 @@
 #!/bin/bash 
-set -e
-  
 
+set -e 
+failure(){
+    echo "failed at: $1 $2"
+}
 
- failure (){
-    echo "failed at: $1 $2" 
- }
-
- trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR 
-
- echo "Hello good morning" 
-
-echoo "Hello good morning" 
- echo "Hello subbu"
+echo "Hello world" 
+echooo "Hello world" 
+echo "Hello subbu" 
