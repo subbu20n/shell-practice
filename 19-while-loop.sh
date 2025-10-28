@@ -1,10 +1,8 @@
 #!/bin/bash 
 
 a=0 
-
 while [ $a -lt 10 ] 
-do 
+do
   echo $a 
-  a=`expr $a + 1`
-done 
-
+  a=`expr $a + 1` 
+done   
