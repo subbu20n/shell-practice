@@ -65,13 +65,12 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
 if  [ ! -z "$FILES" ] 
 then 
-   echo -e "files to zip are: $FILES" | tee -a $LOG_FILE 
-
-   TIMESTAMP=$(date +%F-%H-%M-%S)
-   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMO.zip"
-   find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE" 
+    echo "Files to zip are: $FILES"
+    TIMESTAMP=$(date +%F-%H-%M-%S)
+    ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
+    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
    
-   if [ -f $ZIPFILE ]
+   if [ -f $ZIP_FILE ]
    then 
       echo -e "successfullly created a zip file" | tee -a $LOG_FILE 
 
