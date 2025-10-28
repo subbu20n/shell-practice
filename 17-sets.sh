@@ -4,3 +4,10 @@ echo "Hello good morning"
 
 echoo "Hello good morning" 
  echo "Hello subbu"  
+
+
+ failure (){
+    echo "failed at: $1 $2" 
+ }
+
+ trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR 
