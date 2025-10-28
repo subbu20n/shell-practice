@@ -40,7 +40,8 @@ validate(){
        echo -e "Installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE 
     else 
        echo -e "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE 
-       exit 1    
+       exit 1   
+    fi     
 }
 
 while IFS= read -r filepath 
