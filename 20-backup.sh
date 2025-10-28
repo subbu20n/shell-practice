@@ -74,11 +74,11 @@ then
    then 
       echo -e "successfullly created a zip file" | tee -a $LOG_FILE 
 
-        # while IFS= read -r filepath 
-        # do 
-        #    echo -e "Deleting file: $filepath" | tee -a $LOG_FILE 
-        #    rm -rf $filepath 
-        # done <<< $FILES 
+        while IFS= read -r filepath 
+        do 
+           echo -e "Deleting file: $filepath" | tee -a $LOG_FILE 
+           rm -rf $filepath 
+        done <<< $FILES 
 
          echo -e "Log files found older than 14 days from source directory removed ... $Y SUCCESSFULLY $N" | tee -a $LOG_FILE      
    else   
