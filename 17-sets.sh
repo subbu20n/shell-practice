@@ -1,9 +1,6 @@
 #!/bin/bash 
 set -e
-echo "Hello good morning" 
-
-echoo "Hello good morning" 
- echo "Hello subbu"  
+  
 
 
  failure (){
@@ -11,3 +8,8 @@ echoo "Hello good morning"
  }
 
  trap 'failure "${LINENO}" "${BASH_COMMAND}"' ERR 
+
+ echo "Hello good morning" 
+
+echoo "Hello good morning" 
+ echo "Hello subbu"
