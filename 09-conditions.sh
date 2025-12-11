@@ -5,11 +5,11 @@ NUMBER=$1
 # -gt greater than 
 # -lt less than 
 # -eq equal 
-# -ne not equal 
+# -ne not equal to 
 
-if [ $NUMBER -lt 10 ] 
+if [$NUMBER -lt 0] 
 then 
   echo "Given number $NUMBER is less than 10" 
-else 
-  echo "Given number $NUMBER is not less than 10" 
-fi     
+else
+  echo "Given number $NUMBER is not lees than 10" 
+fi 
