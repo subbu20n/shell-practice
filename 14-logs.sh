@@ -30,6 +30,7 @@ validate() {
   else 
      echo -e "Installing $2 is ... $R FAILURE $N" | tee -a $LOG_FILE 
      exit1 
+  fi    
 }
 
 dnf list installed nginx  &>> $LOG_FILE  
