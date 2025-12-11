@@ -2,3 +2,4 @@
 
 echo "pid of the script: $$" 
 echo "$GREETING" 
+echo "hello subbu" 
