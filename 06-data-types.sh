@@ -1,11 +1,12 @@
 #!/bin/bash 
 
-NUMBER1=Subbu # here string is subbu , string ni addition cheyalemu kabatti we cannot add string ok. 
-NUMBER2=200 
+NUMBER1=Subbu 
+NUMBER2=10 
 
-TIMESTAMP=$(date) 
+Timestamp=$(date) 
 
-echo "script executed at: $TIMESTAMP" 
+echo "script executed at: $Timestamp" 
 
-SUM=$(($NUMBER1 + $NUMBER2)) 
-echo "sum of $NUMBER1 and $NUMBER2: $SUM" 
+sum=$(( $NUMBER1 + $NUMBER2 )) 
+
+echo "sum of $NUMBER1 and $NUMBER2 is: $sum"
