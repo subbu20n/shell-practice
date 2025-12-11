@@ -4,8 +4,8 @@ USERID=$(id -u)
 
 if [ $USERID -ne 0 ] 
 then 
-  echo " ERROR:: Please run thi script with root access'" 
-  exit1 
+  echo "ERROR:: Please run this script with root access'" 
+  exit 1 
 else 
   echo "you are running with root access" 
 fi 
@@ -17,7 +17,7 @@ then
    echo "Installing $2 is ... success" 
 else 
    echo "Installing $2 is ... failure" 
-   exit1 
+   exit 1 
 fi 
 
 }
