@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-NUMBER1=Subbu 
+NUMBER1=Sub
 NUMBER2=10 
 
 Timestamp=$(date) 
