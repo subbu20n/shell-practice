@@ -44,7 +44,7 @@ else
 fi 
 
 dnf list installed python3 &>> $LOG_FILE  
-if [ $? - ne 0 ] 
+if [ $? -ne 0 ] 
 then 
    echo -e "python3 is not installed ... going to install" | tee -a $LOG_FILE 
    dnf install python3 -y &>> $LOG_FILE  
@@ -54,7 +54,7 @@ else
 fi 
 
 dnf list installed mysql &>> $LOG_FILE  
-if [ $? - ne 0 ] 
+if [ $? -ne 0 ] 
 then 
    echo -e "mysql is not installed ... going to install"  | tee -a $LOG_FILE 
    dnf install mysql -y &>> $LOG_FILE  
