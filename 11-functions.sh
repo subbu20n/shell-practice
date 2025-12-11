@@ -11,13 +11,16 @@ else
 fi 
 
 # validation function takes input as exit status what command they tried to install 
-if [ $? -eq 0 ] 
+validate(){
+  if [ $? -eq 0 ] 
 then 
    echo "Installing $2 is ... success" 
 else 
    echo "Installing $2 is ... failure" 
    exit1 
 fi 
+
+}
 
 dnf list installed mysql 
 if [ $? -ne 0 ]
