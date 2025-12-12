@@ -40,7 +40,7 @@ fi
 mkdir -p $LOGS_FOLDER 
 
 usage(){
-    echo -e "$R USAGE $N  sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>" | tee -a $LOG_FILE 
+    echo -e "$R USAGE $N  20-backup.sh <source-dir> <destination-dir> <days(optional)>" | tee -a $LOG_FILE 
     exit 1 
 }
 
