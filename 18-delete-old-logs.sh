@@ -40,7 +40,7 @@ validation (){
   fi    
 }
 
-echo -e "Script execution started at: $(date +%s)" | tee -a $LOG_FILE
+echo -e "Script execution started at: $(date)" | tee -a $LOG_FILE
 
 FILES_TO_DELETE=$(find . -name "*.log" -mtime +14) | tee -a $LOG_FILE 
 
