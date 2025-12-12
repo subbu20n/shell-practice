@@ -42,7 +42,7 @@ validation (){
 
 echo -e "Script execution started at: $(date)" | tee -a $LOG_FILE
 
-FILES_TO_DELETE=$(find . -name "*.log" -mtime +14) | tee -a $LOG_FILE 
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14) | tee -a $LOG_FILE 
 
 while IFS= read -r filepath 
 do 
