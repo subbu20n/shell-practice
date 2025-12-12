@@ -24,7 +24,7 @@ validate(){
        echo -e "$2 ... $G SUCCESS $N" | tee -a $LOG_FILE 
     else 
        echo -e "$2 ... $R FAILURE $N" | tee -a $LOG_FILE  
-       exit 1 
+       exit 1  
     fi          
 } 
 # check whether the root user or not 
