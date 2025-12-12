@@ -37,6 +37,7 @@ validation (){
      echo -e "Installing $2 iss .. $G SUCCESS $N" | tee -a $LOG_FILE
   else 
      echo -e "Installing $2 is ... $R FAILURE $N"    | tee -a $LOG_FILE
+  fi    
 }
 
 echo -e "Script execution started at: $(date +%s)" | tee -a $LOG_FILE
