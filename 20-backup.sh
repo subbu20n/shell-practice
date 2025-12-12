@@ -40,7 +40,7 @@ fi
 mkdir -p $LOGS_FOLDER 
 
 usage(){
-    echo -e "$R USAGE $N  20-backup.sh <source-dir> <destination-dir> <days(optional)>" | tee -a $LOG_FILE 
+    echo -e "$R USAGE $N  $20-backup.sh <source-dir> <destination-dir> <days(optional)>" | tee -a $LOG_FILE 
     exit 1 
 }
 
@@ -79,7 +79,7 @@ then
            echo -e "Deleting file: $filepath" | tee -a $LOG_FILE 
            rm -rf $filepath 
         done <<< $FILES 
-
+ 
          echo -e "Log files found older than 14 days from source directory removed ... $Y SUCCESSFULLY $N" | tee -a $LOG_FILE      
    else   
       echo -e "zip file creation ... $R FAILURE $N" | tee -a $LOG_FILE 
