@@ -3,7 +3,4 @@ do
   echo $i
 done
 
-for i in {0..3} 
-do 
-  echo $i 
-done
+ 

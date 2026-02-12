@@ -10,9 +10,3 @@ echo "Hello world"
 echooo "Hello world" 
 echo "Hello subbu" 
  
-
- set -e 
- failure(){
-    echo "failed at: $1 $2"
- }
- trap 'failure "${LINE_NO}" "{BASH_COMMAND}"' ERR 
