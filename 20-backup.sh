@@ -72,6 +72,7 @@ then
    
    if [ -f $ZIP_FILE ]
    then 
+<<<<<<< HEAD
       echo -e "successfullly created a zip file" | tee -a $LOG_FILE 
 
         while IFS= read -r filepath 
@@ -85,6 +86,19 @@ then
       echo -e "zip file creation ... $R FAILURE $N" | tee -a $LOG_FILE 
       exit 1 
    fi     
+=======
+      echo "successfully created a zip file" 
+   while IFS= read filepath 
+   do 
+     echo -e "Deleting filepath: $filepath"
+     rm -rf $filepath 
+   done <<< $FILES 
+      echo -e "log files older than 14days from source directory removed ... $G SUCCESS $N" | tee -a $LOG_FILE 
+   else 
+      echo -e "zip file creation failure" | tee -a $LOG_FILE 
+      exit 1
+   fi       
+>>>>>>> 5fad662 (shell practice)
 else 
    echo -e "No log files found older than 14 days removed... $Y SKIPPING $N" | tee -a $LOG_FILE 
 fi       
